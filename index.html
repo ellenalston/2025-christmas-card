@@ -3,32 +3,45 @@
 <head>
   <meta charset="UTF-8" />
   <title>The Alstons • 2025 Holiday Letter</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="format-detection" content="telephone=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="format-detection" content="telephone=no" />
+
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Quicksand:wght@300;400;500&family=Great+Vibes&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Quicksand:wght@300;400;500&family=Great+Vibes&display=swap"
+    rel="stylesheet"
+  />
+
   <!-- Styles -->
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <!-- Password Gate -->
   <div id="password-gate">
     <div class="gate-box">
       <h2>Welcome 🤍</h2>
       <p>Please enter the family password</p>
       <input type="password" id="password" placeholder="Password" />
-      <button onclick="checkPassword()">Enter</button>
+      <button type="button" onclick="checkPassword()">Enter</button>
       <p id="gate-error">Incorrect password</p>
     </div>
-  </div>  
+  </div>
+
   <div class="page-wrapper">
+    <!-- Hero -->
     <header class="hero">
       <div class="hero-inner">
         <p class="hero-tagline">A cozy little corner of the internet from</p>
         <h1 class="hero-title">The Alstons</h1>
+
         <div class="hero-image">
-          <img src="images/christmas-card-01.jpg" alt="The Alstons Christmas card illustration" />
-        </div>        
+          <img
+            src="images/christmas-card-01.jpg"
+            alt="The Alstons Christmas card illustration"
+          />
+        </div>
+
         <p class="hero-year">2025 Holiday Letter</p>
         <button class="hero-button" data-scroll-target="#letter">
           Read Our Year in Review
@@ -36,6 +49,7 @@
       </div>
     </header>
 
+    <!-- Letter Content -->
     <main id="letter" class="letter">
       <!-- Intro -->
       <section class="section fade-section">
@@ -46,7 +60,6 @@
           <p>Hello, Rob here, and a warm, grateful greeting from The Alstons! All 4 of us!</p>
           <p>Wow: what a year it has been! 2025 is for the books. Here are some of our highlights!</p>
         </div>
-       
       </section>
 
       <!-- Baby / Lillian -->
@@ -63,11 +76,11 @@
           </p>
         </div>
         <div class="image-grid-wrapper">
-        <div class="image-grid">
-          <img src="images/ultrasound.jpg" alt="Baby Lillian ultrasound photo" />
-          <img src="images/pickles-gender-reveal.jpg" alt="Pickles at gender reveal" />
-          <img src="images/family-gender-reveal.jpg" alt="Family gender reveal celebration" />
-        </div>
+          <div class="image-grid">
+            <img src="images/ultrasound.jpg" alt="Baby Lillian ultrasound photo" />
+            <img src="images/pickles-gender-reveal.jpg" alt="Pickles at gender reveal" />
+            <img src="images/family-gender-reveal.jpg" alt="Family gender reveal celebration" />
+          </div>
         </div>
       </section>
 
@@ -85,18 +98,18 @@
           </p>
         </div>
         <div class="image-grid-wrapper">
-        <div class="image-grid">
-          <img src="images/pickles-01.jpg" alt="Pickles the golden retriever 1" />
-          <img src="images/pickles-02.jpg" alt="Pickles the golden retriever 2" />
-          <img src="images/pickles-03.jpg" alt="Pickles the golden retriever 3" />
-          <img src="images/pickles-04.jpg" alt="Pickles the golden retriever 4" />
-          <img src="images/pickles-05.jpg" alt="Pickles the golden retriever 5" />
-          <img src="images/pickles-06.jpg" alt="Pickles the golden retriever 6" />
-          <img src="images/pickles-07.jpg" alt="Pickles the golden retriever 7" />
-          <img src="images/pickles-08.jpg" alt="Pickles the golden retriever 8" />
-          <img src="images/pickles-09.jpg" alt="Pickles the golden retriever 9" />
-          <img src="images/pickles-10.jpg" alt="Pickles the golden retriever 10" />
-        </div>
+          <div class="image-grid">
+            <img src="images/pickles-01.jpg" alt="Pickles the golden retriever 1" />
+            <img src="images/pickles-02.jpg" alt="Pickles the golden retriever 2" />
+            <img src="images/pickles-03.jpg" alt="Pickles the golden retriever 3" />
+            <img src="images/pickles-04.jpg" alt="Pickles the golden retriever 4" />
+            <img src="images/pickles-05.jpg" alt="Pickles the golden retriever 5" />
+            <img src="images/pickles-06.jpg" alt="Pickles the golden retriever 6" />
+            <img src="images/pickles-07.jpg" alt="Pickles the golden retriever 7" />
+            <img src="images/pickles-08.jpg" alt="Pickles the golden retriever 8" />
+            <img src="images/pickles-09.jpg" alt="Pickles the golden retriever 9" />
+            <img src="images/pickles-10.jpg" alt="Pickles the golden retriever 10" />
+          </div>
         </div>
       </section>
 
@@ -120,12 +133,12 @@
           </p>
         </div>
         <div class="image-grid-wrapper">
-        <div class="image-grid">
-          <img src="images/dinner-01.jpg" alt="Dinner outing 1" />
-          <img src="images/dinner-02.jpg" alt="Dinner outing 2" />
-          <img src="images/dinner-03.jpg" alt="Dinner outing 3" />
-          <img src="images/dinner-04.jpg" alt="Dinner outing 4" />
-        </div>
+          <div class="image-grid">
+            <img src="images/dinner-01.jpg" alt="Dinner outing 1" />
+            <img src="images/dinner-02.jpg" alt="Dinner outing 2" />
+            <img src="images/dinner-03.jpg" alt="Dinner outing 3" />
+            <img src="images/dinner-04.jpg" alt="Dinner outing 4" />
+          </div>
         </div>
       </section>
 
@@ -141,11 +154,11 @@
           </p>
         </div>
         <div class="image-grid-wrapper">
-        <div class="image-grid">
-          <img src="images/flower-01.jpg" alt="Flower party bouquet 1" />
-          <img src="images/flower-02.jpg" alt="Flower party bouquet 2" />
-          <img src="images/flower-03.jpg" alt="Flower party bouquet 3" />
-        </div>
+          <div class="image-grid">
+            <img src="images/flower-01.jpg" alt="Flower party bouquet 1" />
+            <img src="images/flower-02.jpg" alt="Flower party bouquet 2" />
+            <img src="images/flower-03.jpg" alt="Flower party bouquet 3" />
+          </div>
         </div>
       </section>
 
@@ -157,24 +170,25 @@
         <div class="section-body">
           <p>
             Moving into the career side of things, Ellen accomplished a massive feat — getting a job for a tech
-            company as a software engineer (In fact, she designed this whole letter.)! She still keeps her Music Therapy license current and will always hold
-            that era close to her heart. I am so proud of her for taking this courageous leap!
+            company as a software engineer (in fact, she designed this whole letter!). She still keeps her Music
+            Therapy license current and will always hold that era close to her heart. I am so proud of her for
+            taking this courageous leap!
           </p>
           <p>
-            At Progressive, in addition to receiving an promotion this year, I’ve embraced getting involved in the DEI space. Some highlights include hosting
-            quarterly volunteer events at places like The Kid’s Book Bank and Cleveland Metroparks, marching in the
-            Memorial Day and Pride Parades, and most recently, giving a speech at our annual Keys to Progress event,
-            where I spoke on behalf of one of the lucky recipients, an Air Force veteran named Akeba, to whom we
-            gifted a 2023 Ford Edge SUV!
+            At Progressive, in addition to receiving a promotion this year, I’ve embraced getting involved in the DEI
+            space. Some highlights include hosting quarterly volunteer events at places like The Kid’s Book Bank and
+            Cleveland Metroparks, marching in the Memorial Day and Pride Parades, and most recently, giving a speech
+            at our annual Keys to Progress event, where I spoke on behalf of one of the lucky recipients, an Air Force
+            veteran named Akeba, to whom we gifted a 2023 Ford Edge SUV!
           </p>
         </div>
         <div class="image-grid-wrapper">
-        <div class="image-grid">
-          <img src="images/progressive-01.jpg" alt="Progressive event 1" />
-          <img src="images/progressive-02.jpg" alt="Progressive event 2" />
-          <img src="images/progressive-03.jpg" alt="Progressive event 3" />
-          <img src="images/progressive-04.jpg" alt="Progressive event 4" />
-        </div>
+          <div class="image-grid">
+            <img src="images/progressive-01.jpg" alt="Progressive event 1" />
+            <img src="images/progressive-02.jpg" alt="Progressive event 2" />
+            <img src="images/progressive-03.jpg" alt="Progressive event 3" />
+            <img src="images/progressive-04.jpg" alt="Progressive event 4" />
+          </div>
         </div>
       </section>
 
@@ -192,11 +206,11 @@
           </p>
         </div>
         <div class="image-grid-wrapper">
-        <div class="image-grid">
-          <img src="images/pickleball-01.jpg" alt="Pickleball tournament 1" />
-          <img src="images/pickleball-02.jpg" alt="Pickleball tournament 2" />
-          <img src="images/pickleball-03.jpg" alt="Pickleball tournament 2" />
-        </div>
+          <div class="image-grid">
+            <img src="images/pickleball-01.jpg" alt="Pickleball tournament 1" />
+            <img src="images/pickleball-02.jpg" alt="Pickleball tournament 2" />
+            <img src="images/pickleball-03.jpg" alt="Pickleball tournament 3" />
+          </div>
         </div>
       </section>
 
@@ -212,11 +226,11 @@
           </p>
         </div>
         <div class="image-grid-wrapper">
-        <div class="image-grid">
-          <img src="images/florida-01.jpg" alt="Florida trip 1" />
-          <img src="images/florida-02.jpg" alt="Florida trip 2" />
-          <img src="images/florida-03.jpg" alt="Florida trip 3" />
-        </div>
+          <div class="image-grid">
+            <img src="images/florida-01.jpg" alt="Florida trip 1" />
+            <img src="images/florida-02.jpg" alt="Florida trip 2" />
+            <img src="images/florida-03.jpg" alt="Florida trip 3" />
+          </div>
         </div>
 
         <div class="section-body">
@@ -225,13 +239,15 @@
             laughter and stories, kayaked, caught a few sharks in the open water, and lounged on the beach.
           </p>
         </div>
-        <div class="image-grid">
-          <img src="images/hilton-head-01.jpg" alt="Hilton Head 1" />
-          <img src="images/hilton-head-02.jpg" alt="Hilton Head 2" />
-          <img src="images/hilton-head-03.jpg" alt="Hilton Head 3" />
-          <img src="images/hilton-head-04.jpg" alt="Hilton Head 4" />
-          <img src="images/hilton-head-05.jpg" alt="Hilton Head 5" />
-          <img src="images/hilton-head-06.jpg" alt="Hilton Head 6" />
+        <div class="image-grid-wrapper">
+          <div class="image-grid">
+            <img src="images/hilton-head-01.jpg" alt="Hilton Head 1" />
+            <img src="images/hilton-head-02.jpg" alt="Hilton Head 2" />
+            <img src="images/hilton-head-03.jpg" alt="Hilton Head 3" />
+            <img src="images/hilton-head-04.jpg" alt="Hilton Head 4" />
+            <img src="images/hilton-head-05.jpg" alt="Hilton Head 5" />
+            <img src="images/hilton-head-06.jpg" alt="Hilton Head 6" />
+          </div>
         </div>
 
         <div class="section-body">
@@ -241,10 +257,10 @@
           </p>
         </div>
         <div class="image-grid-wrapper">
-        <div class="image-grid">
-          <img src="images/greenville-01.jpg" alt="Greenville trip 1" />
-          <img src="images/greenville-02.jpg" alt="Greenville trip 2" />
-        </div>
+          <div class="image-grid">
+            <img src="images/greenville-01.jpg" alt="Greenville trip 1" />
+            <img src="images/greenville-02.jpg" alt="Greenville trip 2" />
+          </div>
         </div>
       </section>
 
@@ -255,17 +271,17 @@
         </div>
         <div class="section-body">
           <p>
-            Ellen’s cousin’s Anne Marie’s wedding in Toledo was very special; spending quality time with cousins,
+            Ellen’s cousin Anne Marie’s wedding in Toledo was very special; we spent quality time with cousins,
             aunts, and uncles we don’t get to see often, cutting a rug on the dance floor to their family classic,
             “Take Me Home, Country Roads.”
           </p>
         </div>
         <div class="image-grid-wrapper">
-        <div class="image-grid">
-          <img src="images/wedding-01.jpg" alt="Wedding celebration 1" />
-          <img src="images/wedding-02.jpg" alt="Wedding celebration 2" />
-          <img src="images/wedding-03.jpg" alt="Wedding celebration 3" />
-        </div>
+          <div class="image-grid">
+            <img src="images/wedding-01.jpg" alt="Wedding celebration 1" />
+            <img src="images/wedding-02.jpg" alt="Wedding celebration 2" />
+            <img src="images/wedding-03.jpg" alt="Wedding celebration 3" />
+          </div>
         </div>
       </section>
 
@@ -293,17 +309,17 @@
           <p>
             As for enjoying Cleveland baseball this summer — Ellen and I discovered the ease of the transit system
             in Shaker Heights, taking the rapid train line down to sit close and watch the Guards win! Since the
-            stadium is sponsored by Progressive, we attended Progressive Field Day as a perk of my employment; lastly, my
-            men’s Singers Club of Cleveland performed “God Bless America” in the 7th Inning Stretch in one of the last
+            stadium is sponsored by Progressive, we attended Progressive Field Day as a perk of my employment; lastly,
+            my men’s Singers Club of Cleveland performed “God Bless America” in the 7th Inning Stretch in one of the last
             games of the season, which we won with a walk-off home run to help clinch the AL Central Division!
           </p>
         </div>
         <div class="image-grid-wrapper">
-        <div class="image-grid">
-          <img src="images/guardians-01.jpg" alt="Cleveland Guardians game 1" />
-          <img src="images/guardians-02.jpg" alt="Cleveland Guardians game 2" />
-          <img src="images/guardians-03.jpg" alt="Cleveland Guardians game 3" />
-        </div>
+          <div class="image-grid">
+            <img src="images/guardians-01.jpg" alt="Cleveland Guardians game 1" />
+            <img src="images/guardians-02.jpg" alt="Cleveland Guardians game 2" />
+            <img src="images/guardians-03.jpg" alt="Cleveland Guardians game 3" />
+          </div>
         </div>
       </section>
 
@@ -320,14 +336,14 @@
           </p>
         </div>
         <div class="image-grid-wrapper">
-        <div class="image-grid">
-          <img src="images/home-01.jpg" alt="Home life 1" />
-          <img src="images/home-02.jpg" alt="Home life 2" />
-          <img src="images/home-03.jpg" alt="Home life 3" />
-          <img src="images/home-04.jpg" alt="Home life 4" />
-          <img src="images/home-05.jpg" alt="Home life 5" />
-          <img src="images/home-06.jpg" alt="Home life 6" />
-        </div>
+          <div class="image-grid">
+            <img src="images/home-01.jpg" alt="Home life 1" />
+            <img src="images/home-02.jpg" alt="Home life 2" />
+            <img src="images/home-03.jpg" alt="Home life 3" />
+            <img src="images/home-04.jpg" alt="Home life 4" />
+            <img src="images/home-05.jpg" alt="Home life 5" />
+            <img src="images/home-06.jpg" alt="Home life 6" />
+          </div>
         </div>
       </section>
 
@@ -339,7 +355,7 @@
         <div class="section-body">
           <p>
             Now, Lillian will most certainly be taking up most of our time and attention when she arrives. A Babymoon
-            trip was something that was important to Ellen and I. This September, we spent a few magical days in the
+            trip was something that was important to Ellen and me. This September, we spent a few magical days in the
             heart of New York City to celebrate and nerd out together as two theater kids at heart (after all, the
             theater is how we met!).
           </p>
@@ -351,23 +367,23 @@
           </p>
         </div>
         <div class="image-grid-wrapper">
-        <div class="image-grid">
-          <img src="images/babymoon-01.jpg" alt="Babymoon NYC 1" />
-          <img src="images/babymoon-02.jpg" alt="Babymoon NYC 2" />
-          <img src="images/babymoon-03.jpg" alt="Babymoon NYC 3" />
-          <img src="images/babymoon-04.jpg" alt="Babymoon NYC 4" />
-          <img src="images/babymoon-05.jpg" alt="Babymoon NYC 5" />
-          <img src="images/babymoon-06.jpg" alt="Babymoon NYC 6" />
-          <img src="images/babymoon-07.jpg" alt="Babymoon NYC 7" />
-          <img src="images/babymoon-08.jpg" alt="Babymoon NYC 8" />
-          <img src="images/babymoon-09.jpg" alt="Babymoon NYC 9" />
-          <img src="images/babymoon-10.jpg" alt="Babymoon NYC 10" />
-          <img src="images/babymoon-11.jpg" alt="Babymoon NYC 11" />
-          <img src="images/babymoon-12.jpg" alt="Babymoon NYC 12" />
-          <img src="images/babymoon-13.jpg" alt="Babymoon NYC 13" />
-          <img src="images/babymoon-14.jpg" alt="Babymoon NYC 14" />
-          <img src="images/babymoon-15.jpg" alt="Babymoon NYC 15" />
-        </div>
+          <div class="image-grid">
+            <img src="images/babymoon-01.jpg" alt="Babymoon NYC 1" />
+            <img src="images/babymoon-02.jpg" alt="Babymoon NYC 2" />
+            <img src="images/babymoon-03.jpg" alt="Babymoon NYC 3" />
+            <img src="images/babymoon-04.jpg" alt="Babymoon NYC 4" />
+            <img src="images/babymoon-05.jpg" alt="Babymoon NYC 5" />
+            <img src="images/babymoon-06.jpg" alt="Babymoon NYC 6" />
+            <img src="images/babymoon-07.jpg" alt="Babymoon NYC 7" />
+            <img src="images/babymoon-08.jpg" alt="Babymoon NYC 8" />
+            <img src="images/babymoon-09.jpg" alt="Babymoon NYC 9" />
+            <img src="images/babymoon-10.jpg" alt="Babymoon NYC 10" />
+            <img src="images/babymoon-11.jpg" alt="Babymoon NYC 11" />
+            <img src="images/babymoon-12.jpg" alt="Babymoon NYC 12" />
+            <img src="images/babymoon-13.jpg" alt="Babymoon NYC 13" />
+            <img src="images/babymoon-14.jpg" alt="Babymoon NYC 14" />
+            <img src="images/babymoon-15.jpg" alt="Babymoon NYC 15" />
+          </div>
         </div>
       </section>
 

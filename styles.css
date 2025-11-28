@@ -1,7 +1,3 @@
-* {
-  max-width: 100vw;
-}
-
 /* =======================
    DESIGN VARIABLES
 ======================= */
@@ -33,14 +29,20 @@
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   width: 100%;
   overflow-x: hidden;
-  overflow-y: auto;   /* IMPORTANT */
 }
 
+body {
+  font-family: "Quicksand", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: radial-gradient(circle at top left, #fdf4ed 0%, #f7efe5 40%, #f0e1d4 100%);
+  color: var(--ink);
+  -webkit-text-size-adjust: 100%;
+}
 
 img,
 video,
@@ -84,7 +86,7 @@ iframe {
 .gate-box button {
   padding: 0.6rem 1.4rem;
   background: var(--accent-green);
-  color: white;
+  color: #fff;
   border-radius: var(--radius-pill);
   border: none;
   cursor: pointer;
@@ -107,7 +109,7 @@ iframe {
 }
 
 /* =======================
-   HERO SECTION
+   HERO
 ======================= */
 
 .hero {
@@ -137,7 +139,7 @@ iframe {
   max-width: 420px;
   border-radius: 20px;
   padding: 12px;
-  background: white;
+  background: #fff;
   box-shadow: 0 12px 26px rgba(0,0,0,0.12);
 }
 
@@ -146,10 +148,11 @@ iframe {
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--accent-green);
+  margin: 0;
 }
 
 .hero-title {
-  font-family: "Playfair Display", serif;
+  font-family: "Playfair Display", "Georgia", serif;
   font-size: clamp(2.7rem, 4vw, 3.3rem);
   margin: 0;
   color: var(--accent-red);
@@ -158,25 +161,27 @@ iframe {
 .hero-year {
   font-size: 1rem;
   letter-spacing: 0.2em;
-  margin: 0.5rem 0 1.5rem;
+  text-transform: uppercase;
   color: var(--accent-red-soft);
+  margin: 0.5rem 0 1.5rem;
 }
 
 .hero-button {
   padding: 0.9rem 1.9rem;
   border-radius: var(--radius-pill);
   background: linear-gradient(135deg, var(--accent-green), var(--accent-red));
-  color: white;
+  color: #fff;
   border: none;
   cursor: pointer;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   box-shadow: 0 10px 18px rgba(0,0,0,0.1);
-  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .hero-button:hover {
   transform: translateY(-2px);
+  box-shadow: 0 14px 24px rgba(0,0,0,0.13);
 }
 
 /* =======================
@@ -230,28 +235,21 @@ iframe {
   width: 100%;
 }
 
-/* DESKTOP */
 .image-grid {
   max-width: 1000px;
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 0.8rem;
 }
 
-/* MOBILE */
-@media (max-width: 768px) {
-  .image-grid {
-    grid-template-columns: 1fr;
-  }
+.image-grid img {
+  width: 100%;
+  aspect-ratio: 4 / 5;       /* keeps rows more even */
+  object-fit: cover;         /* small crop, no distortion */
+  border-radius: 12px;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.08);
 }
-
-  .image-grid img {
-    width: 100%;
-    border-radius: 12px;
-    box-shadow: 0 6px 14px rgba(0,0,0,0.08);
-  }
-
 
 /* =======================
    FOOTER
@@ -266,17 +264,52 @@ iframe {
 }
 
 /* =======================
-   ANIMATION
+   ANIMATIONS
 ======================= */
 
 .fade-section {
   opacity: 0;
   transform: translateY(15px);
-  transition: opacity 0.6s e
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
-body {
-  overflow-y: auto !important;
-  position: relative !important;
-  height: auto !important;
+.fade-section.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =======================
+   RESPONSIVE
+======================= */
+
+@media (max-width: 900px) {
+  .letter {
+    padding: 0.5rem 1rem 3rem;
+  }
+
+  .section {
+    padding: 1.3rem;
+  }
+
+  .image-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .hero {
+    padding-top: 3rem;
+  }
+
+  .hero-inner {
+    padding: 1.5rem;
+  }
+
+  .hero-image img {
+    max-width: 320px;
+  }
+
+  .image-grid {
+    grid-template-columns: 1fr;
+  }
 }
