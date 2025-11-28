@@ -324,3 +324,17 @@ iframe {
     grid-template-columns: 1fr;
   }
 }
+
+/* MOBILE MEMORY FIX */
+@media (max-width: 900px) {
+  .image-grid img {
+    content-visibility: auto;
+    contain-intrinsic-size: 300px 400px;
+  }
+}
+@media (max-width: 900px) {
+  .image-grid {
+    will-change: transform;
+  }
+}
+
