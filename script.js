@@ -40,19 +40,20 @@ document.addEventListener("DOMContentLoaded", () => {
     const correctPassword = "pickles"; // CHANGE THIS
   
     if (input === correctPassword) {
-      document.getElementById("password-gate").style.display = "none";
+      const gate = document.getElementById("password-gate");
+      gate.remove();   // remove from DOM entirely
       localStorage.setItem("authenticated", "true");
     } else {
       document.getElementById("gate-error").style.display = "block";
     }
   }
   
-  // Keep logged in across refresh
-  if (localStorage.getItem("authenticated") === "true") {
-    document.addEventListener("DOMContentLoaded", () => {
+  document.addEventListener("DOMContentLoaded", () => {
+    if (localStorage.getItem("authenticated") === "true") {
       const gate = document.getElementById("password-gate");
-      if (gate) gate.style.display = "none";
-    });
-  }
+      if (gate) gate.remove();
+    }
+  });
+  
   
   
