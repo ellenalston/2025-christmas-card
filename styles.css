@@ -1,0 +1,308 @@
+:root {
+  --bg: #fbf5ee;
+  --bg-alt: #f3e6dc;
+  --card-bg: #fffaf5;
+
+  /* Illustration-matched colors */
+  --accent-green: #6e7f6b;      /* soft moss */
+  --accent-red: #9f534f;        /* muted rosewood */
+  --accent-red-soft: #c58a82;   /* dusty blush */
+  --accent-gold: #d5b68a;       /* soft parchment */
+
+  --ink: #43302c;
+
+  --shadow-soft: 0 12px 24px rgba(0, 0, 0, 0.06);
+  --radius-lg: 18px;
+  --radius-pill: 999px;
+}
+  
+  /* Reset-ish */
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: "Quicksand", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+      sans-serif;
+    background: radial-gradient(circle at top left, #fdf4ed 0, #f7efe5 40%, #f0e1d4 100%);
+    color: var(--ink);
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  /* Layout */
+  .page-wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Hero */
+  .hero {
+    position: relative;
+    padding: 4rem 1.5rem 3rem;
+    text-align: center;
+    overflow: hidden;
+  }
+  
+  .hero-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2.5rem 2rem;
+    background: linear-gradient(135deg, rgba(255, 250, 246, 0.96), rgba(247, 232, 220, 0.98));
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-soft);
+    border: 1px solid rgba(200, 167, 135, 0.4);
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-image {
+    display: flex;
+    justify-content: center;
+    margin: 2.2rem 0 1.8rem;
+  }
+  
+  .hero-image img {
+    max-width: 420px;   /* controls size */
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 12px 26px rgba(0,0,0,0.12);
+    background: white;
+    padding: 12px;
+  }
+  
+  
+  .hero-tagline {
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-size: 0.75rem;
+    color: var(--accent-green);
+    margin: 0 0 0.75rem;
+  }
+  
+  .hero-title {
+    font-family: "Playfair Display", "Georgia", serif;
+    font-size: clamp(2.7rem, 4vw, 3.3rem);
+    margin: 0;
+    color: var(--accent-red);
+  }
+  
+  .hero-year {
+    margin: 0.5rem 0 1.5rem;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--accent-red-soft);
+  }
+  
+  .hero-button {
+    border-radius: var(--radius-pill);
+    border: none;
+    padding: 0.9rem 1.9rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    cursor: pointer;
+    background: linear-gradient(135deg, #6e7f6b, #9f534f);
+    color: #fff;
+    box-shadow: 0 10px 18px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .hero-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 24px rgba(0, 0, 0, 0.13);
+  }
+  
+  .hero-accent {
+    position: absolute;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(156, 75, 75, 0.2), transparent 60%);
+    filter: blur(2px);
+    z-index: 0;
+  }
+  
+  .hero-accent-left {
+    top: -40px;
+    left: -60px;
+  }
+  
+  .hero-accent-right {
+    bottom: -60px;
+    right: -40px;
+  }
+  
+  /* Letter content */
+  .letter {
+    max-width: 1200px;  
+    margin: 0 auto;
+    padding: 1rem 2rem 4rem;
+}
+  
+  .section {
+    background: var(--card-bg);
+    border-radius: var(--radius-lg);
+    padding: 2.8rem 3rem 3rem;  /* more breathing room INSIDE */
+    margin: 2rem 0;            /* slightly tighter spacing BETWEEN sections */
+    width: 100%;
+    box-shadow: var(--shadow-soft);
+    border: 1px solid rgba(212, 186, 162, 0.4);
+  }
+  
+  /* Scroll reveal base state (JS adds .in-view) */
+  .fade-section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  
+  .fade-section.in-view {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .section-header h2 {
+    font-family: "Playfair Display", "Georgia", serif;
+    font-size: 2rem;
+    margin: 0;
+    color: var(--accent-green);
+  }
+  
+  .section-subtitle {
+    margin: 0.4rem 0 0.8rem;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent-red-soft);
+  }
+  
+  .section-body p {
+    line-height: 1.7;
+    font-size: 1.2rem;
+    margin: 0.4rem 0;
+  }
+  
+  /* Image grid: Pinterest-style masonry, centered */
+  /* Wrap and center the gallery */
+  .image-grid-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  
+  /* Pinterest-style masonry, but centered */
+  .image-grid {
+    margin-top: 1.3rem;
+    column-count: 3;
+    column-gap: 0.75rem;
+    max-width: 1000px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  
+  /* Keep images natural */
+  .image-grid img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 0.75rem;
+    border-radius: 12px;
+    break-inside: avoid;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+  }
+  
+  /* Auto-switch small galleries to row layout */
+/* Small galleries: center them as a block instead of masonry */
+/* Small image groups: true centered 2x2 grid */
+.image-grid.few-images {
+    all: unset;                 /* HARD RESET — wipes masonry + flex bugs */
+    display: grid;
+    grid-template-columns: repeat(2, 300px);   /* balanced size */
+    gap: 22px;
+  
+    margin: 2rem auto;          /* center horizontally */
+    justify-content: center;
+  }
+  
+  /* Images behave normally again */
+  .image-grid.few-images img {
+    width: 100%;
+    height: auto;
+    border-radius: 14px;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+  }
+  
+  
+  
+  /* Closing */
+  .closing-signoff {
+    margin-top: 1.4rem;
+    font-size: 1rem;
+  }
+  
+  .script-name {
+    font-family: "Great Vibes", "Brush Script MT", cursive;
+    font-size: 2.1rem;
+    color: var(--accent-red);
+  }
+  
+  /* Footer */
+  .site-footer {
+    border-top: 1px dashed rgba(156, 75, 75, 0.3);
+    padding: 1rem 1.5rem 2rem;
+    text-align: center;
+    font-size: 0.8rem;
+    color: rgba(59, 45, 43, 0.7);
+  }
+  
+  /* Responsive tweaks */
+  @media (max-width: 900px) {
+    .letter {
+      padding: 0.5rem 1rem 3rem;
+    }
+  
+    .section {
+      padding: 1.5rem 1.4rem 1.7rem;
+    }
+  
+    .image-grid {
+        column-count: 2;
+        max-width: 560px;
+      }
+  }
+  
+  @media (max-width: 600px) {
+    .hero {
+      padding-top: 3rem;
+    }
+  
+    .hero-inner {
+      padding: 2rem 1.4rem;
+    }
+  
+    .image-grid {
+        column-count: 1;
+        max-width: 100%;
+      }
+  
+    .section {
+      margin: 1rem 0;
+      padding: 1.2rem 1.1rem 1.4rem;
+    }
+  }
+  
