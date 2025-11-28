@@ -365,4 +365,26 @@ iframe {
       padding: 1.2rem 1.1rem 1.4rem;
     }
   }
+
+  /* MOBILE STABILITY PATCH */
+@media (max-width: 900px) {
+
+  /* Disable masonry layout (column-count breaks iOS Safari on long pages) */
+  .image-grid {
+    column-count: 1 !important;
+  }
+
+  /* Make sure images behave */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Prevent overflow glitches */
+  .section, .letter, body {
+    overflow-x: hidden;
+  }
+
+}
+
   
