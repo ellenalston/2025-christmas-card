@@ -387,4 +387,25 @@ iframe {
 
 }
 
+/* Mobile crash protection */
+@media (max-width: 900px) {
+
+  /* Disable masonry */
+  .image-grid {
+    column-count: 1 !important;
+    display: block !important;
+  }
+
+  /* Reduce load pressure */
+  .image-grid img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Prevent layout glitch */
+  body, .section {
+    overflow-x: hidden;
+  }
+}
+
   
