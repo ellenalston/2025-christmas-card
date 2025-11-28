@@ -43,6 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const gate = document.getElementById("password-gate");
       gate.remove();   // remove from DOM entirely
       localStorage.setItem("authenticated", "true");
+      window.scrollTo({ top: 0, behavior: "instant" });
     } else {
       document.getElementById("gate-error").style.display = "block";
     }
