@@ -20,36 +20,30 @@
 }
 
 /* =======================
-   GLOBAL RESET
+   RESET & BASE
 ======================= */
 
-*,
-*::before,
-*::after {
+*, *::before, *::after {
   box-sizing: border-box;
 }
 
-html,
-body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
+html, body {
+  max-width: 100%;
   overflow-x: hidden;
+  margin: 0;
 }
 
 body {
-  font-family: "Quicksand", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: "Quicksand", system-ui, sans-serif;
   background: radial-gradient(circle at top left, #fdf4ed 0%, #f7efe5 40%, #f0e1d4 100%);
   color: var(--ink);
   -webkit-text-size-adjust: 100%;
 }
 
-img,
-video,
-iframe {
-  max-width: 100%;
-  height: auto;
+img {
   display: block;
+  width: 100%;
+  height: auto;
 }
 
 /* =======================
@@ -84,22 +78,22 @@ iframe {
 }
 
 .gate-box button {
-  padding: 0.6rem 1.4rem;
   background: var(--accent-green);
   color: #fff;
   border-radius: var(--radius-pill);
   border: none;
+  padding: 0.6rem 1.4rem;
   cursor: pointer;
 }
 
 #gate-error {
+  display: none;
   color: var(--accent-red);
   font-size: 0.85rem;
-  display: none;
 }
 
 /* =======================
-   PAGE LAYOUT
+   LAYOUT
 ======================= */
 
 .page-wrapper {
@@ -113,7 +107,6 @@ iframe {
 ======================= */
 
 .hero {
-  position: relative;
   padding: 4rem 1.5rem 3rem;
   text-align: center;
 }
@@ -128,6 +121,20 @@ iframe {
   border: 1px solid rgba(200,167,135,0.4);
 }
 
+.hero-tagline {
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent-green);
+}
+
+.hero-title {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2.7rem, 4vw, 3.3rem);
+  margin: 0.3rem 0;
+  color: var(--accent-red);
+}
+
 .hero-image {
   display: flex;
   justify-content: center;
@@ -135,129 +142,89 @@ iframe {
 }
 
 .hero-image img {
-  width: 100%;
   max-width: 420px;
-  border-radius: 20px;
   padding: 12px;
   background: #fff;
+  border-radius: 20px;
   box-shadow: 0 12px 26px rgba(0,0,0,0.12);
 }
 
-.hero-tagline {
-  font-size: 0.75rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--accent-green);
-  margin: 0;
-}
-
-.hero-title {
-  font-family: "Playfair Display", "Georgia", serif;
-  font-size: clamp(2.7rem, 4vw, 3.3rem);
-  margin: 0;
-  color: var(--accent-red);
-}
-
 .hero-year {
-  font-size: 1rem;
   letter-spacing: 0.2em;
-  text-transform: uppercase;
+  font-size: 1rem;
   color: var(--accent-red-soft);
-  margin: 0.5rem 0 1.5rem;
 }
 
 .hero-button {
-  padding: 0.9rem 1.9rem;
+  margin-top: 1.4rem;
+  padding: 0.9rem 2rem;
   border-radius: var(--radius-pill);
   background: linear-gradient(135deg, var(--accent-green), var(--accent-red));
-  color: #fff;
+  color: white;
   border: none;
   cursor: pointer;
-  letter-spacing: 0.12em;
   text-transform: uppercase;
-  box-shadow: 0 10px 18px rgba(0,0,0,0.1);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.hero-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 14px 24px rgba(0,0,0,0.13);
+  letter-spacing: 0.12em;
 }
 
 /* =======================
-   CONTENT SECTIONS
+   CONTENT
 ======================= */
 
 .letter {
   max-width: 1200px;
-  margin: 0 auto;
+  margin: auto;
   padding: 1rem 2rem 4rem;
 }
 
 .section {
-  width: 100%;
-  margin: 2rem 0;
-  padding: 2.5rem 2.7rem;
   background: var(--card-bg);
+  padding: 2.3rem;
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-soft);
-  border: 1px solid rgba(212,186,162,0.4);
+  margin: 2rem 0;
 }
 
 .section-header h2 {
   font-family: "Playfair Display", serif;
-  font-size: 2rem;
-  margin: 0;
   color: var(--accent-green);
 }
 
-.section-subtitle {
-  font-size: 0.9rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--accent-red-soft);
-  margin: 0.4rem 0 0.8rem;
-}
-
 .section-body p {
-  font-size: 1.1rem;
   line-height: 1.75;
-  margin-bottom: 1.5rem;
+  font-size: 1.08rem;
 }
 
 /* =======================
-   IMAGE GRID
+   IMAGE GRID (PERFECTED)
 ======================= */
 
 .image-grid-wrapper {
   display: flex;
   justify-content: center;
-  width: 100%;
+  margin-top: 1.2rem;
 }
 
 .image-grid {
-  max-width: 1000px;
   width: 100%;
+  max-width: 1000px;
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 0.8rem;
 }
 
 .image-grid img {
-  width: 100%;
-  height: auto;
-  object-fit: contain;
   border-radius: 12px;
-  box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+  object-fit: contain;
+  background: #fff;
 }
 
-/* Closing signature script */
-.closing-signoff {
-  margin-top: 1.4rem;
-}
+/* =======================
+   SIGNATURE
+======================= */
 
 .script-name {
-  font-family: 'Great Vibes', cursive;
+  font-family: "Great Vibes", cursive;
   font-size: 2.2rem;
   color: var(--accent-red);
 }
@@ -268,85 +235,40 @@ iframe {
 
 .site-footer {
   border-top: 1px dashed rgba(156,75,75,0.3);
-  padding: 1rem 1.5rem 2rem;
   text-align: center;
   font-size: 0.8rem;
-  color: rgba(59,45,43,0.7);
+  padding: 1.5rem;
 }
 
 /* =======================
-   ANIMATIONS
+   FADE FIX (SAFARI SAFE)
 ======================= */
 
 .fade-section {
-  opacity: 0;
-  transform: translateY(15px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.fade-section.in-view {
   opacity: 1;
-  transform: translateY(0);
+  transform: none;
 }
-
-/* Mobile safety override: always show content */
-@media (max-width: 900px) {
-  .fade-section {
-    opacity: 1 !important;
-    transform: none !important;
-    transition: none !important;
-  }
-}
-
 
 /* =======================
    RESPONSIVE
 ======================= */
 
 @media (max-width: 900px) {
-  .letter {
-    padding: 0.5rem 1rem 3rem;
-  }
-
-  .section {
-    padding: 1.3rem;
-  }
-
   .image-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .letter {
+    padding: 1rem;
   }
 }
 
 @media (max-width: 600px) {
-  .hero {
-    padding-top: 3rem;
-  }
-
-  .hero-inner {
-    padding: 1.5rem;
+  .image-grid {
+    grid-template-columns: 1fr;
   }
 
   .hero-image img {
     max-width: 320px;
   }
-
-  .image-grid {
-    grid-template-columns: 1fr;
-  }
 }
-
-/* MOBILE MEMORY FIX */
-@media (max-width: 900px) {
-  .image-grid img {
-    content-visibility: auto;
-    contain-intrinsic-size: 300px 400px;
-  }
-}
-@media (max-width: 900px) {
-  .image-grid {
-    will-change: transform;
-  }
-}
-
-
-
