@@ -10,6 +10,15 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <div id="password-gate">
+    <div class="gate-box">
+      <h2>Welcome 🤍</h2>
+      <p>Please enter the family password</p>
+      <input type="password" id="password" placeholder="Password" />
+      <button onclick="checkPassword()">Enter</button>
+      <p id="gate-error">Incorrect password</p>
+    </div>
+  </div>  
   <div class="page-wrapper">
     <header class="hero">
       <div class="hero-inner">
