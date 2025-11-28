@@ -289,6 +289,15 @@ iframe {
   transform: translateY(0);
 }
 
+/* Mobile safety override: always show content */
+@media (max-width: 900px) {
+  .fade-section {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
 
 /* =======================
    RESPONSIVE
@@ -338,4 +347,6 @@ iframe {
     will-change: transform;
   }
 }
+
+
 
