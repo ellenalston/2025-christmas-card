@@ -1,57 +1,59 @@
-// Smooth scroll, fade-in sections, and password gate
-
 document.addEventListener("DOMContentLoaded", () => {
-  // Smooth scroll for hero button
+
+  // Smooth scroll button
   const scrollButton = document.querySelector("[data-scroll-target]");
   if (scrollButton) {
     scrollButton.addEventListener("click", () => {
-      const targetSelector = scrollButton.getAttribute("data-scroll-target");
-      const targetEl = document.querySelector(targetSelector);
-      if (targetEl) {
-        targetEl.scrollIntoView({ behavior: "smooth" });
-      }
+      const targetEl = document.querySelector(scrollButton.dataset.scrollTarget);
+      if (targetEl) targetEl.scrollIntoView({ behavior: "smooth" });
     });
   }
 
-  // Fade-in sections on scroll
-  const sections = document.querySelectorAll(".fade-section");
-  if ("IntersectionObserver" in window) {
-    const observer = new IntersectionObserver(
-      entries => {
+  // SAFELY APPLY FADE-IN
+  try {
+    const sections = document.querySelectorAll(".fade-section");
+
+    if ("IntersectionObserver" in window) {
+      const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             entry.target.classList.add("in-view");
-            observer.unobserve(entry.target);
+            if (entry.target && observer) observer.unobserve(entry.target);
           }
         });
-      },
-      { threshold: 0.15 }
-    );
+      }, { threshold: 0.15 });
 
-    sections.forEach(section => observer.observe(section));
-  } else {
-    // Fallback: reveal all sections
-    sections.forEach(section => section.classList.add("in-view"));
+      sections.forEach(section => observer.observe(section));
+    } else {
+      sections.forEach(section => section.classList.add("in-view"));
+    }
+
+  } catch (err) {
+    console.warn("Mobile animation disabled:", err);
+    document.querySelectorAll(".fade-section").forEach(s => s.classList.add("in-view"));
   }
 
-  // Auto-remove gate if already authenticated
-  if (localStorage.getItem("authenticated") === "true") {
-    const gate = document.getElementById("password-gate");
-    if (gate) gate.remove();
-  }
 });
 
+
+// PASSWORD GATE
 function checkPassword() {
-  const input = document.getElementById("password").value.trim();
-  const correctPassword = "pickles"; // change if you want
+  const input = document.getElementById("password").value;
+  const correctPassword = "pickles";
 
   if (input === correctPassword) {
     const gate = document.getElementById("password-gate");
     if (gate) gate.remove();
     localStorage.setItem("authenticated", "true");
-    window.scrollTo({ top: 0, behavior: "auto" });
+    window.scrollTo({ top: 0, behavior: "instant" });
   } else {
-    const error = document.getElementById("gate-error");
-    if (error) error.style.display = "block";
+    document.getElementById("gate-error").style.display = "block";
   }
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  if (localStorage.getItem("authenticated") === "true") {
+    const gate = document.getElementById("password-gate");
+    if (gate) gate.remove();
+  }
+});
