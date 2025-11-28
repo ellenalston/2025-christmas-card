@@ -15,6 +15,20 @@
   --radius-lg: 18px;
   --radius-pill: 999px;
 }
+
+html,
+body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+img,
+video,
+iframe {
+  max-width: 100%;
+  height: auto;
+}
+
   
   /* Reset-ish */
   *,
@@ -273,14 +287,16 @@
 /* Small galleries: center them as a block instead of masonry */
 /* Small image groups: true centered 2x2 grid */
 .image-grid.few-images {
-    all: unset;                 /* HARD RESET — wipes masonry + flex bugs */
-    display: grid;
-    grid-template-columns: repeat(2, 300px);   /* balanced size */
-    gap: 22px;
-  
-    margin: 2rem auto;          /* center horizontally */
-    justify-content: center;
-  }
+  all: unset;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 16px;
+  max-width: 500px;
+  width: 100%;
+  margin: 2rem auto;
+  justify-content: center;
+}
+
   
   /* Images behave normally again */
   .image-grid.few-images img {
@@ -320,7 +336,8 @@
     }
   
     .section {
-      padding: 1.5rem 1.4rem 1.7rem;
+      margin: 1rem 0;
+      padding: 1.1rem 1rem;
     }
   
     .image-grid {
