@@ -245,10 +245,21 @@ iframe {
 
 .image-grid img {
   width: 100%;
-  aspect-ratio: 4 / 5;       /* keeps rows more even */
-  object-fit: cover;         /* small crop, no distortion */
+  height: auto;
+  object-fit: contain;
   border-radius: 12px;
   box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+}
+
+/* Closing signature script */
+.closing-signoff {
+  margin-top: 1.4rem;
+}
+
+.script-name {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.2rem;
+  color: var(--accent-red);
 }
 
 /* =======================
